@@ -65,6 +65,10 @@ body {
   &_active {
     border: 5px solid $glow-color;
   }
+
+  &:not(&_active) {
+    opacity: 0.6;
+  }
 }
 
 .azathoth {
