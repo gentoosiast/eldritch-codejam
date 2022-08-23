@@ -15,6 +15,69 @@
       rel="apple-touch-icon"
       href="<%= require('./assets/apple-touch-icon.png') %>"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <div class="left-ui">
+        <div class="ancients">
+          <div class="ancient ancient_active azathoth"></div>
+          <div class="ancient cthulhu"></div>
+          <div class="ancient shubniggurath"></div>
+          <div class="ancient yogsothoth"></div>
+        </div>
+
+        <div class="buttons">
+          <button class="button level-button very-easy" type="button">
+            💀 очень легкий
+          </button>
+          <button class="button level-button easy" type="button">
+            💀💀 легкий
+          </button>
+          <button
+            class="button level-button level-button_active normal"
+            type="button"
+          >
+            💀💀💀 средний
+          </button>
+          <button class="button level-button hard" type="button">
+            💀💀💀💀 трудный
+          </button>
+          <button class="button level-button very-hard" type="button">
+            💀💀💀💀💀 очень трудный
+          </button>
+          <button class="button shuffle-button" type="button">
+            ⚔️ раздать
+          </button>
+        </div>
+      </div>
+
+      <div class="right-ui">
+        <div class="ticker">
+          <div class="ticker__stage stage1">
+            <span class="ticker__cell green">1</span>
+            <span class="ticker__cell yellow">2</span>
+            <span class="ticker__cell blue">1</span>
+          </div>
+          <div class="ticker__stage stage2">
+            <span class="ticker__cell green">2</span>
+            <span class="ticker__cell yellow">3</span>
+            <span class="ticker__cell blue">1</span>
+          </div>
+          <div class="ticker__stage stage3">
+            <span class="ticker__cell green">2</span>
+            <span class="ticker__cell yellow">4</span>
+            <span class="ticker__cell blue">0</span>
+          </div>
+        </div>
+
+        <div class="card"></div>
+      </div>
+    </div>
+  </body>
 </html>

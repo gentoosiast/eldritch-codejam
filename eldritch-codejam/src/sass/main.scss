@@ -1,12 +1,171 @@
 @import 'normalize.css';
 
+$light-color: #fff;
+$glow-color: #a92b20;
+$level-color: rgba(0 0 0 / 0.5);
+$shuffle-color: #a78bfa;
+$shuffle-color-hover: #c4b5fd;
+$green-cells-color: #15803d;
+$yellow-cells-color: #ca8a04;
+$blue-cells-color: #1d4ed8;
+
 * {
   box-sizing: border-box;
 }
 
 body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
   background-image: url('../assets/bg.webp');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  font-family: system-ui;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.left-ui {
+  display: flex;
+  align-items: flex-end;
+  gap: 50px;
+}
+
+.right-ui {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+.ancients {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: min-content min-content;
+}
+
+.ancient {
+  width: 238px;
+  height: 311px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease-in-out;
+
+  &:hover {
+    box-shadow: 0 0 30px $glow-color;
+  }
+
+  &_active {
+    border: 5px solid $glow-color;
+  }
+}
+
+.azathoth {
+  background-image: url('../assets/ancients/azathoth.webp');
+}
+
+.cthulhu {
+  background-image: url('../assets/ancients/cthulhu.webp');
+}
+
+.shubniggurath {
+  background-image: url('../assets/ancients/shubniggurath.webp');
+}
+
+.yogsothoth {
+  background-image: url('../assets/ancients/yogsothoth.webp');
+}
+
+.buttons {
+  display: flex;
+  max-width: 300px;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.button {
+  padding: 20px;
+  border: unset;
+  color: $glow-color;
+  cursor: pointer;
+  font-family: 'Rubik Wet Paint', cursive;
+  text-transform: uppercase;
+}
+
+.level-button {
+  background-color: $level-color;
+  transition: box-shadow 0.3s ease-in-out;
+
+  &:hover {
+    box-shadow: 0 0 10px $glow-color;
+  }
+
+  &_active {
+    border: 2px solid $glow-color;
+  }
+}
+
+.shuffle-button {
+  background-color: $shuffle-color;
+  transition: background-color 0.3s ease-in-out;
+
+  &:hover {
+    background-color: $shuffle-color-hover;
+  }
+}
+
+.ticker {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  user-select: none;
+}
+
+.ticker__stage {
+  display: flex;
+  gap: 10px;
+}
+
+.ticker__cell {
+  display: flex;
+  width: 60px;
+  height: 35px;
+  align-items: center;
+  justify-content: center;
+  color: $light-color;
+  font-weight: bold;
+}
+
+.green {
+  background-color: $green-cells-color;
+}
+
+.yellow {
+  background-color: $yellow-cells-color;
+}
+
+.blue {
+  background-color: $blue-cells-color;
+}
+
+.card {
+  width: 200px;
+  height: 295px;
+  background-image: url('../assets/cards/card-bg.webp');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease-in-out;
+
+  &:hover {
+    box-shadow: 0 0 30px $glow-color;
+  }
 }
