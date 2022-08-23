@@ -1,0 +1,12 @@
+@import 'normalize.css';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url('../assets/bg.webp');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

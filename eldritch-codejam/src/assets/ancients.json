@@ -1,0 +1,85 @@
+{
+  "azathoth": {
+    "green": 5,
+    "yellow": 9,
+    "blue": 2,
+    "stage1": {
+      "green": 1,
+      "yellow": 2,
+      "blue": 1
+    },
+    "stage2": {
+      "green": 2,
+      "yellow": 3,
+      "blue": 1
+    },
+    "stage3": {
+      "green": 2,
+      "yellow": 4,
+      "blue": 0
+    }
+  },
+
+  "cthulhu": {
+    "green": 4,
+    "yellow": 9,
+    "blue": 2,
+    "stage1": {
+      "green": 0,
+      "yellow": 2,
+      "blue": 2
+    },
+    "stage2": {
+      "green": 1,
+      "yellow": 3,
+      "blue": 0
+    },
+    "stage3": {
+      "green": 3,
+      "yellow": 4,
+      "blue": 0
+    }
+  },
+
+  "yogsothoth": {
+    "green": 5,
+    "yellow": 9,
+    "blue": 2,
+    "stage1": {
+      "green": 0,
+      "yellow": 2,
+      "blue": 1
+    },
+    "stage2": {
+      "green": 2,
+      "yellow": 3,
+      "blue": 1
+    },
+    "stage3": {
+      "green": 3,
+      "yellow": 4,
+      "blue": 0
+    }
+  },
+
+  "shubniggurath": {
+    "green": 6,
+    "yellow": 8,
+    "blue": 2,
+    "stage1": {
+      "green": 1,
+      "yellow": 2,
+      "blue": 1
+    },
+    "stage2": {
+      "green": 3,
+      "yellow": 2,
+      "blue": 1
+    },
+    "stage3": {
+      "green": 2,
+      "yellow": 4,
+      "blue": 0
+    }
+  }
+}

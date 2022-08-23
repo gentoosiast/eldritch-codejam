@@ -1,0 +1,79 @@
+{
+  "green": {
+    "easy": [
+      "./assets/cards/green/green01.webp",
+      "./assets/cards/green/green02.webp",
+      "./assets/cards/green/green03.webp",
+      "./assets/cards/green/green04.webp",
+      "./assets/cards/green/green05.webp"
+    ],
+    "normal": [
+      "./assets/cards/green/green06.webp",
+      "./assets/cards/green/green07.webp",
+      "./assets/cards/green/green08.webp",
+      "./assets/cards/green/green09.webp",
+      "./assets/cards/green/green10.webp",
+      "./assets/cards/green/green11.webp",
+      "./assets/cards/green/green12.webp",
+      "./assets/cards/green/green13.webp"
+    ],
+    "hard": [
+      "./assets/cards/green/green14.webp",
+      "./assets/cards/green/green15.webp",
+      "./assets/cards/green/green16.webp",
+      "./assets/cards/green/green17.webp",
+      "./assets/cards/green/green18.webp"
+    ]
+  },
+
+  "yellow": {
+    "easy": [
+      "./assets/cards/yellow/yellow01.webp",
+      "./assets/cards/yellow/yellow02.webp",
+      "./assets/cards/yellow/yellow03.webp",
+      "./assets/cards/yellow/yellow04.webp",
+      "./assets/cards/yellow/yellow05.webp"
+    ],
+    "normal": [
+      "./assets/cards/yellow/yellow06.webp",
+      "./assets/cards/yellow/yellow07.webp",
+      "./assets/cards/yellow/yellow08.webp",
+      "./assets/cards/yellow/yellow09.webp",
+      "./assets/cards/yellow/yellow10.webp",
+      "./assets/cards/yellow/yellow11.webp",
+      "./assets/cards/yellow/yellow12.webp",
+      "./assets/cards/yellow/yellow13.webp",
+      "./assets/cards/yellow/yellow14.webp",
+      "./assets/cards/yellow/yellow15.webp",
+      "./assets/cards/yellow/yellow16.webp"
+    ],
+    "hard": [
+      "./assets/cards/yellow/yellow17.webp",
+      "./assets/cards/yellow/yellow18.webp",
+      "./assets/cards/yellow/yellow19.webp",
+      "./assets/cards/yellow/yellow20.webp",
+      "./assets/cards/yellow/yellow21.webp"
+    ]
+  },
+
+  "blue": {
+    "easy": [
+      "./assets/cards/blue/blue01.webp",
+      "./assets/cards/blue/blue02.webp",
+      "./assets/cards/blue/blue03.webp",
+      "./assets/cards/blue/blue04.webp"
+    ],
+    "normal": [
+      "./assets/cards/blue/blue05.webp",
+      "./assets/cards/blue/blue06.webp",
+      "./assets/cards/blue/blue07.webp",
+      "./assets/cards/blue/blue08.webp"
+    ],
+    "hard": [
+      "./assets/cards/blue/blue09.webp",
+      "./assets/cards/blue/blue10.webp",
+      "./assets/cards/blue/blue11.webp",
+      "./assets/cards/blue/blue12.webp"
+    ]
+  }
+}
