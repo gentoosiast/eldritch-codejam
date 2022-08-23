@@ -57,6 +57,7 @@ body {
   background-size: cover;
   cursor: pointer;
   transition: box-shadow 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
 
   &:hover {
     box-shadow: 0 0 30px $glow-color;
@@ -66,7 +67,7 @@ body {
     border: 5px solid $glow-color;
   }
 
-  &:not(&_active) {
+  &:not(&_active):not(&:hover) {
     opacity: 0.6;
   }
 }
