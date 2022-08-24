@@ -59,6 +59,22 @@ body {
   transition: box-shadow 0.3s ease-in-out;
   transition: opacity 0.3s ease-in-out;
 
+  &_azathoth {
+    background-image: url('../assets/ancients/azathoth.webp');
+  }
+
+  &_cthulhu {
+    background-image: url('../assets/ancients/cthulhu.webp');
+  }
+
+  &_shubniggurath {
+    background-image: url('../assets/ancients/shubniggurath.webp');
+  }
+
+  &_yogsothoth {
+    background-image: url('../assets/ancients/yogsothoth.webp');
+  }
+
   &:hover {
     box-shadow: 0 0 30px $glow-color;
   }
@@ -72,22 +88,6 @@ body {
   }
 }
 
-.azathoth {
-  background-image: url('../assets/ancients/azathoth.webp');
-}
-
-.cthulhu {
-  background-image: url('../assets/ancients/cthulhu.webp');
-}
-
-.shubniggurath {
-  background-image: url('../assets/ancients/shubniggurath.webp');
-}
-
-.yogsothoth {
-  background-image: url('../assets/ancients/yogsothoth.webp');
-}
-
 .buttons {
   display: flex;
   max-width: 300px;
@@ -97,14 +97,14 @@ body {
 
 .button {
   padding: 20px;
-  border: unset;
+  border: 2px solid transparent;
   color: $glow-color;
   cursor: pointer;
   font-family: 'Rubik Wet Paint', cursive;
   text-transform: uppercase;
 }
 
-.level-button {
+.difficulty-button {
   background-color: $level-color;
   transition: box-shadow 0.3s ease-in-out;
 

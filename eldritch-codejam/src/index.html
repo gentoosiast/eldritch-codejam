@@ -26,29 +26,55 @@
     <div class="container">
       <div class="left-ui">
         <div class="ancients">
-          <div class="ancient ancient_active azathoth"></div>
-          <div class="ancient cthulhu"></div>
-          <div class="ancient shubniggurath"></div>
-          <div class="ancient yogsothoth"></div>
+          <div
+            class="ancient ancient_active ancient_azathoth"
+            data-ancient="azathoth"
+          ></div>
+          <div class="ancient ancient_cthulhu" data-ancient="cthulhu"></div>
+          <div
+            class="ancient ancient_shubniggurath"
+            data-ancient="shubniggurath"
+          ></div>
+          <div
+            class="ancient ancient_yogsothoth"
+            data-ancient="yogsothoth"
+          ></div>
         </div>
 
         <div class="buttons">
-          <button class="button level-button very-easy" type="button">
+          <button
+            class="button difficulty-button"
+            type="button"
+            data-difficulty="very-easy"
+          >
             💀 очень легкий
           </button>
-          <button class="button level-button easy" type="button">
+          <button
+            class="button difficulty-button"
+            type="button"
+            data-difficulty="easy"
+          >
             💀💀 легкий
           </button>
           <button
-            class="button level-button level-button_active normal"
+            class="button difficulty-button difficulty-button_active"
             type="button"
+            data-difficulty="normal"
           >
             💀💀💀 средний
           </button>
-          <button class="button level-button hard" type="button">
+          <button
+            class="button difficulty-button"
+            type="button"
+            data-difficulty="hard"
+          >
             💀💀💀💀 трудный
           </button>
-          <button class="button level-button very-hard" type="button">
+          <button
+            class="button difficulty-button"
+            type="button"
+            data-difficulty="very-hard"
+          >
             💀💀💀💀💀 очень трудный
           </button>
           <button class="button shuffle-button" type="button">
