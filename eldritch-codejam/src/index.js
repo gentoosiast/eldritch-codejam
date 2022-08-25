@@ -49,20 +49,7 @@ function filterCards(ancient, difficulty) {
 
   const decks = [[], [], []]; // [green deck, yellow deck, blue deck]
 
-  if (difficulty === 'very-easy') {
-    decks[0] = pickRandomCards(
-      greenCards.filter((card) => card.difficulty === 'easy'),
-      greenNeeded
-    );
-    decks[1] = pickRandomCards(
-      yellowCards.filter((card) => card.difficulty === 'easy'),
-      yellowNeeded
-    );
-    decks[2] = pickRandomCards(
-      blueCards.filter((card) => card.difficulty === 'easy'),
-      blueNeeded
-    );
-  } else if (difficulty === 'easy') {
+  if (difficulty === 'easy') {
     greenCards = greenCards.filter((card) => card.difficulty !== 'hard');
     yellowCards = yellowCards.filter((card) => card.difficulty !== 'hard');
     blueCards = blueCards.filter((card) => card.difficulty !== 'hard');
@@ -70,13 +57,19 @@ function filterCards(ancient, difficulty) {
     greenCards = greenCards.filter((card) => card.difficulty !== 'easy');
     yellowCards = yellowCards.filter((card) => card.difficulty !== 'easy');
     blueCards = blueCards.filter((card) => card.difficulty !== 'easy');
-  } else if (difficulty === 'very-hard') {
-    decks[0] = greenCards.filter((card) => card.difficulty === 'hard');
-    decks[1] = yellowCards.filter((card) => card.difficulty === 'hard');
-    decks[2] = blueCards.filter((card) => card.difficulty === 'hard');
-  }
-
-  if (difficulty === 'very-easy' || difficulty === 'very-hard') {
+  } else if (difficulty === 'very-easy' || difficulty === 'very-hard') {
+    decks[0] = pickRandomCards(
+      greenCards.filter((card) => card.difficulty === difficulty),
+      greenNeeded
+    );
+    decks[1] = pickRandomCards(
+      yellowCards.filter((card) => card.difficulty === difficulty),
+      yellowNeeded
+    );
+    decks[2] = pickRandomCards(
+      blueCards.filter((card) => card.difficulty === difficulty),
+      blueNeeded
+    );
     greenCards = pickRandomCards(
       greenCards.filter((card) => card.difficulty === 'normal'),
       greenNeeded
@@ -133,11 +126,11 @@ function dealCards() {
   /* eslint-disable */
   console.log(
     'greenDeck',
-    greenDeck,
+    [...greenDeck],
     '\nyellowDeck',
-    yellowDeck,
+    [...yellowDeck],
     '\nblueDeck',
-    blueDeck
+    [...blueDeck]
   );
   /* eslint-enable */
   const stageDecks = createStageDecks(
