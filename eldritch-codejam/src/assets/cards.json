@@ -3,91 +3,109 @@
     {
       "id": "green01",
       "difficulty": "easy",
+      "color": "green",
       "url": "./assets/cards/green/green01.webp"
     },
     {
       "id": "green02",
       "difficulty": "easy",
+      "color": "green",
       "url": "./assets/cards/green/green02.webp"
     },
     {
       "id": "green03",
       "difficulty": "easy",
+      "color": "green",
       "url": "./assets/cards/green/green03.webp"
     },
     {
       "id": "green04",
       "difficulty": "easy",
+      "color": "green",
       "url": "./assets/cards/green/green04.webp"
     },
     {
       "id": "green05",
       "difficulty": "easy",
+      "color": "green",
       "url": "./assets/cards/green/green05.webp"
     },
     {
       "id": "green06",
       "difficulty": "normal",
+      "color": "green",
       "url": "./assets/cards/green/green06.webp"
     },
     {
       "id": "green07",
       "difficulty": "normal",
+      "color": "green",
       "url": "./assets/cards/green/green07.webp"
     },
     {
       "id": "green08",
       "difficulty": "normal",
+      "color": "green",
       "url": "./assets/cards/green/green08.webp"
     },
     {
       "id": "green09",
       "difficulty": "normal",
+      "color": "green",
       "url": "./assets/cards/green/green09.webp"
     },
     {
       "id": "green10",
       "difficulty": "normal",
+      "color": "green",
       "url": "./assets/cards/green/green10.webp"
     },
     {
       "id": "green11",
       "difficulty": "normal",
+      "color": "green",
       "url": "./assets/cards/green/green11.webp"
     },
     {
       "id": "green12",
       "difficulty": "normal",
+      "color": "green",
       "url": "./assets/cards/green/green12.webp"
     },
     {
       "id": "green13",
       "difficulty": "normal",
+      "color": "green",
       "url": "./assets/cards/green/green13.webp"
     },
     {
       "id": "green14",
       "difficulty": "hard",
+      "color": "green",
       "url": "./assets/cards/green/green14.webp"
     },
     {
       "id": "green15",
       "difficulty": "hard",
+      "color": "green",
       "url": "./assets/cards/green/green15.webp"
     },
     {
       "id": "green16",
       "difficulty": "hard",
+      "color": "green",
       "url": "./assets/cards/green/green16.webp"
     },
     {
       "id": "green17",
       "difficulty": "hard",
+      "color": "green",
       "url": "./assets/cards/green/green17.webp"
     },
     {
       "id": "green18",
       "difficulty": "hard",
+      "color": "green",
       "url": "./assets/cards/green/green18.webp"
     }
   ],
@@ -95,106 +113,127 @@
     {
       "id": "yellow01",
       "difficulty": "easy",
+      "color": "yellow",
       "url": "./assets/cards/yellow/yellow01.webp"
     },
     {
       "id": "yellow02",
       "difficulty": "easy",
+      "color": "yellow",
       "url": "./assets/cards/yellow/yellow02.webp"
     },
     {
       "id": "yellow03",
       "difficulty": "easy",
+      "color": "yellow",
       "url": "./assets/cards/yellow/yellow03.webp"
     },
     {
       "id": "yellow04",
       "difficulty": "easy",
+      "color": "yellow",
       "url": "./assets/cards/yellow/yellow04.webp"
     },
     {
       "id": "yellow05",
       "difficulty": "easy",
+      "color": "yellow",
       "url": "./assets/cards/yellow/yellow05.webp"
     },
     {
       "id": "yellow06",
       "difficulty": "normal",
+      "color": "yellow",
       "url": "./assets/cards/yellow/yellow06.webp"
     },
     {
       "id": "yellow07",
       "difficulty": "normal",
+      "color": "yellow",
       "url": "./assets/cards/yellow/yellow07.webp"
     },
     {
       "id": "yellow08",
       "difficulty": "normal",
+      "color": "yellow",
       "url": "./assets/cards/yellow/yellow08.webp"
     },
     {
       "id": "yellow09",
       "difficulty": "normal",
+      "color": "yellow",
       "url": "./assets/cards/yellow/yellow09.webp"
     },
     {
       "id": "yellow10",
       "difficulty": "normal",
+      "color": "yellow",
       "url": "./assets/cards/yellow/yellow10.webp"
     },
     {
       "id": "yellow11",
       "difficulty": "normal",
+      "color": "yellow",
       "url": "./assets/cards/yellow/yellow11.webp"
     },
     {
       "id": "yellow12",
       "difficulty": "normal",
+      "color": "yellow",
       "url": "./assets/cards/yellow/yellow12.webp"
     },
     {
       "id": "yellow13",
       "difficulty": "normal",
+      "color": "yellow",
       "url": "./assets/cards/yellow/yellow13.webp"
     },
     {
       "id": "yellow14",
       "difficulty": "normal",
+      "color": "yellow",
       "url": "./assets/cards/yellow/yellow14.webp"
     },
     {
       "id": "yellow15",
       "difficulty": "normal",
+      "color": "yellow",
       "url": "./assets/cards/yellow/yellow15.webp"
     },
     {
       "id": "yellow16",
       "difficulty": "normal",
+      "color": "yellow",
       "url": "./assets/cards/yellow/yellow16.webp"
     },
     {
       "id": "yellow17",
       "difficulty": "hard",
+      "color": "yellow",
       "url": "./assets/cards/yellow/yellow17.webp"
     },
     {
       "id": "yellow18",
       "difficulty": "hard",
+      "color": "yellow",
       "url": "./assets/cards/yellow/yellow18.webp"
     },
     {
       "id": "yellow19",
       "difficulty": "hard",
+      "color": "yellow",
       "url": "./assets/cards/yellow/yellow19.webp"
     },
     {
       "id": "yellow20",
       "difficulty": "hard",
+      "color": "yellow",
       "url": "./assets/cards/yellow/yellow20.webp"
     },
     {
       "id": "yellow21",
       "difficulty": "hard",
+      "color": "yellow",
       "url": "./assets/cards/yellow/yellow21.webp"
     }
   ],
@@ -203,61 +242,73 @@
     {
       "id": "blue01",
       "difficulty": "easy",
+      "color": "blue",
       "url": "./assets/cards/blue/blue01.webp"
     },
     {
       "id": "blue02",
       "difficulty": "easy",
+      "color": "blue",
       "url": "./assets/cards/blue/blue02.webp"
     },
     {
       "id": "blue03",
       "difficulty": "easy",
+      "color": "blue",
       "url": "./assets/cards/blue/blue03.webp"
     },
     {
       "id": "blue04",
       "difficulty": "easy",
+      "color": "blue",
       "url": "./assets/cards/blue/blue04.webp"
     },
     {
       "id": "blue05",
       "difficulty": "normal",
+      "color": "blue",
       "url": "./assets/cards/blue/blue05.webp"
     },
     {
       "id": "blue06",
       "difficulty": "normal",
+      "color": "blue",
       "url": "./assets/cards/blue/blue06.webp"
     },
     {
       "id": "blue07",
       "difficulty": "normal",
+      "color": "blue",
       "url": "./assets/cards/blue/blue07.webp"
     },
     {
       "id": "blue08",
       "difficulty": "normal",
+      "color": "blue",
       "url": "./assets/cards/blue/blue08.webp"
     },
     {
       "id": "blue09",
       "difficulty": "hard",
+      "color": "blue",
       "url": "./assets/cards/blue/blue09.webp"
     },
     {
       "id": "blue10",
       "difficulty": "hard",
+      "color": "blue",
       "url": "./assets/cards/blue/blue10.webp"
     },
     {
       "id": "blue11",
       "difficulty": "hard",
+      "color": "blue",
       "url": "./assets/cards/blue/blue11.webp"
     },
     {
       "id": "blue12",
       "difficulty": "hard",
+      "color": "blue",
       "url": "./assets/cards/blue/blue12.webp"
     }
   ]
