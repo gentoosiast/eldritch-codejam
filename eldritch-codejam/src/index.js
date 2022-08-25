@@ -12,16 +12,28 @@ function getRandomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+// NOTE: mutates arr
+function pickArrayElement(arr, idx) {
+  let elem = null;
+  if (idx === 0) {
+    elem = arr.shift();
+  } else if (idx === arr.length - 1) {
+    elem = arr.pop();
+  } else {
+    elem = arr[idx];
+    arr.splice(idx, 1);
+  }
+
+  return elem;
+}
+
 function pickRandomCards(sourceDeck, quantity) {
   const qty = sourceDeck.length < quantity ? sourceDeck.length : quantity;
   const resultDeck = [];
-  let i = 0;
-  while (i < qty) {
-    const card = sourceDeck[getRandomNumber(0, sourceDeck.length - 1)];
-    if (!resultDeck.includes(card)) {
-      resultDeck.push(card);
-      i += 1;
-    }
+  for (let i = 0; i < qty; i += 1) {
+    resultDeck.push(
+      pickArrayElement(sourceDeck, getRandomNumber(0, sourceDeck.length - 1))
+    );
   }
 
   return resultDeck;
@@ -94,6 +106,25 @@ function filterCards(ancient, difficulty) {
   return decks;
 }
 
+function createStageDecks(ancient, greenDeck, yellowDeck, blueDeck) {
+  const stageDecks = [[], [], []];
+
+  ['stage1', 'stage2', 'stage3'].forEach((stage, idx) => {
+    const greenNeeded = ancients[ancient][stage].green;
+    const yellowNeeded = ancients[ancient][stage].yellow;
+    const blueNeeded = ancients[ancient][stage].blue;
+    stageDecks[idx] = shuffle(
+      stageDecks[idx].concat(
+        pickRandomCards(greenDeck, greenNeeded),
+        pickRandomCards(yellowDeck, yellowNeeded),
+        pickRandomCards(blueDeck, blueNeeded)
+      )
+    );
+  });
+
+  return stageDecks;
+}
+
 function dealCards() {
   const [greenDeck, yellowDeck, blueDeck] = filterCards(
     options.ancient,
@@ -107,6 +138,22 @@ function dealCards() {
     yellowDeck,
     '\nblueDeck',
     blueDeck
+  );
+  /* eslint-enable */
+  const stageDecks = createStageDecks(
+    options.ancient,
+    greenDeck,
+    yellowDeck,
+    blueDeck
+  );
+  /* eslint-disable */
+  console.log(
+    'stage1Deck',
+    stageDecks[0],
+    '\nstage2Deck',
+    stageDecks[1],
+    '\nstage3Deck',
+    stageDecks[2]
   );
   /* eslint-enable */
   options.isGameStarted = true;
