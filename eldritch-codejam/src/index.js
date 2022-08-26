@@ -58,30 +58,22 @@ function filterCards(ancient, difficulty) {
     yellowCards = yellowCards.filter((card) => card.difficulty !== 'easy');
     blueCards = blueCards.filter((card) => card.difficulty !== 'easy');
   } else if (difficulty === 'very-easy' || difficulty === 'very-hard') {
+    const firstChoiceDifficulty = difficulty === 'very-easy' ? 'easy' : 'hard';
     decks[0] = pickRandomCards(
-      greenCards.filter((card) => card.difficulty === difficulty),
+      greenCards.filter((card) => card.difficulty === firstChoiceDifficulty),
       greenNeeded
     );
     decks[1] = pickRandomCards(
-      yellowCards.filter((card) => card.difficulty === difficulty),
+      yellowCards.filter((card) => card.difficulty === firstChoiceDifficulty),
       yellowNeeded
     );
     decks[2] = pickRandomCards(
-      blueCards.filter((card) => card.difficulty === difficulty),
+      blueCards.filter((card) => card.difficulty === firstChoiceDifficulty),
       blueNeeded
     );
-    greenCards = pickRandomCards(
-      greenCards.filter((card) => card.difficulty === 'normal'),
-      greenNeeded
-    );
-    yellowCards = pickRandomCards(
-      yellowCards.filter((card) => card.difficulty === 'normal'),
-      yellowNeeded
-    );
-    blueCards = pickRandomCards(
-      blueCards.filter((card) => card.difficulty === 'normal'),
-      blueNeeded
-    );
+    greenCards = greenCards.filter((card) => card.difficulty === 'normal');
+    yellowCards = yellowCards.filter((card) => card.difficulty === 'normal');
+    blueCards = blueCards.filter((card) => card.difficulty === 'normal');
   }
 
   decks[0] = shuffle(
