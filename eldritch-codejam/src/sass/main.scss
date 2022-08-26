@@ -9,6 +9,20 @@ $green-cells-color: #355a1d;
 $yellow-cells-color: #a28000;
 $blue-cells-color: #4f579f;
 
+@keyframes flash {
+  0% {
+    box-shadow: 0 0 0 $glow-color;
+  }
+
+  50% {
+    box-shadow: 0 0 20px $glow-color;
+  }
+
+  100% {
+    box-shadow: 0 0 0 $glow-color;
+  }
+}
+
 * {
   box-sizing: border-box;
 }
@@ -41,6 +55,14 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 50px;
+  opacity: 0;
+  pointer-events: none;
+
+  &_visible {
+    opacity: 1;
+    pointer-events: all;
+    transition: opacity 1s ease-in-out;
+  }
 }
 
 .ancients {
@@ -146,6 +168,10 @@ body {
   justify-content: center;
   color: $light-color;
   font-weight: bold;
+
+  &_flash {
+    animation: 1s ease-in-out flash;
+  }
 }
 
 .green {
@@ -169,6 +195,7 @@ body {
   background-size: cover;
   cursor: pointer;
   transition: box-shadow 0.3s ease-in-out;
+  transition: background-image 0.5s ease-in-out;
 
   &:hover {
     box-shadow: 0 0 30px $glow-color;

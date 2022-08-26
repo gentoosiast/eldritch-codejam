@@ -6,6 +6,8 @@ const options = {
   isGameStarted: false,
   ancient: 'azathoth',
   difficulty: 'normal',
+  stageDecks: null,
+  stage: 1,
 };
 
 function getRandomNumber(min, max) {
@@ -125,7 +127,7 @@ function dealCards() {
     [...blueDeck]
   );
   /* eslint-enable */
-  const stageDecks = createStageDecks(
+  options.stageDecks = createStageDecks(
     options.ancient,
     greenDeck,
     yellowDeck,
@@ -134,18 +136,66 @@ function dealCards() {
   /* eslint-disable */
   console.log(
     'stage1Deck',
-    stageDecks[0],
+    options.stageDecks[0],
     '\nstage2Deck',
-    stageDecks[1],
+    options.stageDecks[1],
     '\nstage3Deck',
-    stageDecks[2]
+    options.stageDecks[2]
   );
   /* eslint-enable */
-  options.isGameStarted = true;
 }
 
-function initTicker() {
-  return 0;
+function initTicker(ancient) {
+  ['stage1', 'stage2', 'stage3'].forEach((stage) => {
+    const cells = document.querySelector(`.${stage}`).children;
+    ['green', 'yellow', 'blue'].forEach((color, idx) => {
+      cells[idx].textContent = ancients[ancient][stage][color];
+    });
+  });
+}
+
+function nextCard(el) {
+  const cardElem = el;
+  let idx = options.stage - 1;
+  if (options.stageDecks[idx].length === 0 && options.stage === 3) {
+    /* eslint-disable */
+    console.log('end of round');
+    /* eslint-enable */
+    cardElem.style.backgroundImage = '';
+    options.isGameStarted = false;
+    options.stageDecks = null;
+    setTimeout(() => {
+      document.querySelector('.right-ui').classList.remove('right-ui_visible');
+    }, 2000);
+    return;
+  }
+
+  if (options.stageDecks[idx].length === 0) {
+    options.stage += 1;
+    idx += 1;
+  }
+
+  const card = options.stageDecks[idx].pop();
+  /* eslint-disable */
+  console.log(`card id: ${card.id}, card difficulty: ${card.difficulty}`);
+  /* eslint-enable */
+  const tickerCell = document.querySelector(
+    `.stage${options.stage} > .${card.color}`
+  );
+  tickerCell.textContent -= 1;
+  tickerCell.classList.add('ticker__cell_flash');
+  tickerCell.addEventListener(
+    'animationend',
+    () => {
+      tickerCell.classList.remove('ticker__cell_flash');
+    },
+    { once: true }
+  );
+  const cardImage = new Image();
+  cardImage.src = card.url;
+  cardImage.addEventListener('load', () => {
+    cardElem.style.backgroundImage = `url('${cardImage.src}')`;
+  });
 }
 
 function handleClick(e) {
@@ -158,7 +208,7 @@ function handleClick(e) {
         .classList.remove('ancient_active');
       target.classList.add('ancient_active');
       options.ancient = selectedAncient;
-      initTicker();
+      initTicker(options.ancient);
     }
   } else if (target.classList.contains('difficulty-button')) {
     const selectedDifficulty = target.getAttribute('data-difficulty');
@@ -170,8 +220,18 @@ function handleClick(e) {
       options.difficulty = selectedDifficulty;
     }
   } else if (target.classList.contains('shuffle-button')) {
+    /* eslint-disable */
+    console.log('start of round');
+    /* eslint-enable */
+    options.stage = 1;
+    options.isGameStarted = true;
+    initTicker(options.ancient);
     dealCards();
+    document.querySelector('.right-ui').classList.add('right-ui_visible');
+  } else if (target.classList.contains('card')) {
+    nextCard(target);
   }
 }
 
 document.addEventListener('click', handleClick);
+initTicker(options.ancient);
