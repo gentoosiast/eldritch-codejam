@@ -30,7 +30,10 @@ module.exports = {
   },
   plugins: [
     new CopyPlugin({
-      patterns: [{ from: './src/assets/favicon.ico', to: '[name][ext]' }],
+      patterns: [
+        { from: './src/assets/favicon.ico', to: '[name][ext]' },
+        { from: './src/assets/cards', to: 'assets/cards' },
+      ],
     }),
     new ESLintPlugin(),
     new HTMLWebpackPlugin({
