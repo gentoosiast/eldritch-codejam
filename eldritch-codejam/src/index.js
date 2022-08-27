@@ -3,7 +3,6 @@ import ancients from './assets/ancients.json';
 import cards from './assets/cards.json';
 
 const options = {
-  isGameStarted: false,
   ancient: 'azathoth',
   difficulty: 'normal',
   stageDecks: null,
@@ -162,7 +161,6 @@ function nextCard(el) {
     console.log('end of round');
     /* eslint-enable */
     cardElem.style.backgroundImage = '';
-    options.isGameStarted = false;
     options.stageDecks = null;
     setTimeout(() => {
       document.querySelector('.right-ui').classList.remove('right-ui_visible');
@@ -224,7 +222,6 @@ function handleClick(e) {
     console.log('start of round');
     /* eslint-enable */
     options.stage = 1;
-    options.isGameStarted = true;
     initTicker(options.ancient);
     dealCards();
     document.querySelector('.right-ui').classList.add('right-ui_visible');
