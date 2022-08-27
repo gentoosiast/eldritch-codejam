@@ -153,6 +153,21 @@ function initTicker(ancient) {
   });
 }
 
+function updateTicker(stageNum, cardColor) {
+  const tickerCell = document.querySelector(
+    `.stage${stageNum} > .${cardColor}`
+  );
+  tickerCell.textContent -= 1;
+  tickerCell.classList.add('ticker__cell_flash');
+  tickerCell.addEventListener(
+    'animationend',
+    () => {
+      tickerCell.classList.remove('ticker__cell_flash');
+    },
+    { once: true }
+  );
+}
+
 function abortRound() {
   document.querySelector('.right-ui').classList.remove('right-ui_visible');
   const cardElem = document.querySelector('.card');
@@ -182,22 +197,11 @@ function nextCard(el) {
   /* eslint-disable */
   console.log(`card id: ${card.id}, card difficulty: ${card.difficulty}`);
   /* eslint-enable */
-  const tickerCell = document.querySelector(
-    `.stage${options.stage} > .${card.color}`
-  );
-  tickerCell.textContent -= 1;
-  tickerCell.classList.add('ticker__cell_flash');
-  tickerCell.addEventListener(
-    'animationend',
-    () => {
-      tickerCell.classList.remove('ticker__cell_flash');
-    },
-    { once: true }
-  );
   const cardImage = new Image();
   cardImage.src = card.url;
   cardImage.addEventListener('load', () => {
     cardElem.style.backgroundImage = `url('${cardImage.src}')`;
+    updateTicker(options.stage, card.color);
   });
 }
 
