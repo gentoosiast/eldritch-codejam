@@ -194,10 +194,19 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   cursor: pointer;
+  opacity: 1;
+  pointer-events: all;
   transition: box-shadow 0.3s ease-in-out;
   transition: background-image 0.5s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
 
   &:hover {
     box-shadow: 0 0 30px $glow-color;
+  }
+
+  &_inactive {
+    cursor: auto;
+    opacity: 0.4;
+    pointer-events: none;
   }
 }

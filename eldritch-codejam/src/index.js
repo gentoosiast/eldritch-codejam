@@ -153,6 +153,14 @@ function initTicker(ancient) {
   });
 }
 
+function abortRound() {
+  document.querySelector('.right-ui').classList.remove('right-ui_visible');
+  const cardElem = document.querySelector('.card');
+  cardElem.style.backgroundImage = '';
+  cardElem.classList.remove('card_inactive');
+  options.stageDecks = null;
+}
+
 function nextCard(el) {
   const cardElem = el;
   let idx = options.stage - 1;
@@ -161,10 +169,7 @@ function nextCard(el) {
     console.log('end of round');
     /* eslint-enable */
     cardElem.style.backgroundImage = '';
-    options.stageDecks = null;
-    setTimeout(() => {
-      document.querySelector('.right-ui').classList.remove('right-ui_visible');
-    }, 2000);
+    cardElem.classList.add('card_inactive');
     return;
   }
 
@@ -207,6 +212,7 @@ function handleClick(e) {
       target.classList.add('ancient_active');
       options.ancient = selectedAncient;
       initTicker(options.ancient);
+      abortRound();
     }
   } else if (target.classList.contains('difficulty-button')) {
     const selectedDifficulty = target.getAttribute('data-difficulty');
@@ -216,6 +222,7 @@ function handleClick(e) {
         .classList.remove('difficulty-button_active');
       target.classList.add('difficulty-button_active');
       options.difficulty = selectedDifficulty;
+      abortRound();
     }
   } else if (target.classList.contains('shuffle-button')) {
     /* eslint-disable */
