@@ -146,7 +146,9 @@ function dealCards() {
 
 function initTicker(ancient) {
   ['stage1', 'stage2', 'stage3'].forEach((stage) => {
-    const cells = document.querySelector(`.${stage}`).children;
+    const tickerStage = document.querySelector(`.${stage}`);
+    tickerStage.classList.remove('ticker__stage_inactive');
+    const cells = tickerStage.children;
     ['green', 'yellow', 'blue'].forEach((color, idx) => {
       cells[idx].textContent = ancients[ancient][stage][color];
     });
@@ -168,31 +170,26 @@ function updateTicker(stageNum, cardColor) {
   );
 }
 
-function abortRound() {
+function setupRound() {
   document.querySelector('.right-ui').classList.remove('right-ui_visible');
   const cardElem = document.querySelector('.card');
   cardElem.style.backgroundImage = '';
   cardElem.classList.remove('card_inactive');
+  initTicker(options.ancient);
   options.stageDecks = null;
+  options.stage = 1;
 }
 
 function nextCard(el) {
   const cardElem = el;
-  let idx = options.stage - 1;
-  if (options.stageDecks[idx].length === 0 && options.stage === 3) {
+  if (options.stage > 3) {
     /* eslint-disable */
     console.log('end of round');
     /* eslint-enable */
     cardElem.style.backgroundImage = '';
     cardElem.classList.add('card_inactive');
-    return;
   }
-
-  if (options.stageDecks[idx].length === 0) {
-    options.stage += 1;
-    idx += 1;
-  }
-
+  const idx = options.stage - 1;
   const card = options.stageDecks[idx].pop();
   /* eslint-disable */
   console.log(`card id: ${card.id}, card difficulty: ${card.difficulty}`);
@@ -202,6 +199,12 @@ function nextCard(el) {
   cardImage.addEventListener('load', () => {
     cardElem.style.backgroundImage = `url('${cardImage.src}')`;
     updateTicker(options.stage, card.color);
+    if (options.stageDecks[idx].length === 0) {
+      document
+        .querySelector(`.stage${options.stage}`)
+        .classList.add('ticker__stage_inactive');
+      options.stage += 1;
+    }
   });
 }
 
@@ -215,8 +218,7 @@ function handleClick(e) {
         .classList.remove('ancient_active');
       target.classList.add('ancient_active');
       options.ancient = selectedAncient;
-      initTicker(options.ancient);
-      abortRound();
+      setupRound();
     }
   } else if (target.classList.contains('difficulty-button')) {
     const selectedDifficulty = target.getAttribute('data-difficulty');
@@ -226,14 +228,13 @@ function handleClick(e) {
         .classList.remove('difficulty-button_active');
       target.classList.add('difficulty-button_active');
       options.difficulty = selectedDifficulty;
-      abortRound();
+      setupRound();
     }
   } else if (target.classList.contains('shuffle-button')) {
     /* eslint-disable */
     console.log('start of round');
     /* eslint-enable */
-    options.stage = 1;
-    initTicker(options.ancient);
+    setupRound();
     dealCards();
     document.querySelector('.right-ui').classList.add('right-ui_visible');
   } else if (target.classList.contains('card')) {
@@ -242,4 +243,4 @@ function handleClick(e) {
 }
 
 document.addEventListener('click', handleClick);
-initTicker(options.ancient);
+setupRound();

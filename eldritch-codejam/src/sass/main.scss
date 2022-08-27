@@ -159,6 +159,11 @@ body {
 .ticker__stage {
   display: flex;
   gap: 10px;
+
+  &_inactive {
+    opacity: 0.5;
+    transition: opacity 0.3s ease-in-out;
+  }
 }
 
 .ticker__cell {
