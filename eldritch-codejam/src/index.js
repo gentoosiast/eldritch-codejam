@@ -1,7 +1,9 @@
 import shuffle from 'lodash.shuffle';
 import ancients from './assets/ancients.json';
 import cards from './assets/cards.json';
+import cardflipsound from './assets/cardflip.ogg';
 
+const flipSound = new Audio(cardflipsound);
 const options = {
   ancient: 'azathoth',
   difficulty: 'normal',
@@ -239,6 +241,7 @@ function handleClick(e) {
     dealCards();
     document.querySelector('.right-ui').classList.add('right-ui_visible');
   } else if (target.classList.contains('card')) {
+    flipSound.play();
     nextCard(target);
   }
 }
