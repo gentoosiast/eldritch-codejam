@@ -6,6 +6,7 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack",
     "build-dev": "webpack",
+    "deploy": "cross-env NODE_ENV=production webpack && netlify deploy --prod",
     "start": "webpack serve",
     "watch": "webpack --watch"
   },
