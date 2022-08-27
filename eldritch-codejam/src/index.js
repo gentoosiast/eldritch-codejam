@@ -188,6 +188,7 @@ function nextCard(el) {
     /* eslint-enable */
     cardElem.style.backgroundImage = '';
     cardElem.classList.add('card_inactive');
+    return;
   }
   const idx = options.stage - 1;
   const card = options.stageDecks[idx].pop();
