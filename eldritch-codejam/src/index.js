@@ -242,5 +242,10 @@ function handleClick(e) {
   }
 }
 
+/* eslint-disable */
+console.log(
+  'Информация в консоль выводится исключительно для удобства проверки'
+);
+/* eslint-enable */
 document.addEventListener('click', handleClick);
 setupRound();
