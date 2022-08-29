@@ -137,11 +137,11 @@ function dealCards() {
   /* eslint-disable */
   console.log(
     'stage1Deck',
-    options.stageDecks[0],
+    [...options.stageDecks[0]],
     '\nstage2Deck',
-    options.stageDecks[1],
+    [...options.stageDecks[1]],
     '\nstage3Deck',
-    options.stageDecks[2]
+    [...options.stageDecks[2]]
   );
   /* eslint-enable */
 }
